@@ -226,10 +226,6 @@ let currentTrackIndex = 0;
 
 const musicPlaylist = [
     { name: "1. Cigattres After Sex ☕", src: "assets/music/track1.mp3" },
-    { name: "2. Main Rahoon Ya Na Rahoon 🌙", src: "assets/music/track2.mp3" },
-    { name: "3. Afreen Afreen 🌅", src: "assets/music/track3.mp3" },
-    { name: "4. The  Night  We Met 🌅", src: "assets/music/track4.mp3" },
-    { name: "5. Sun is  Coming 🌅", src: "assets/music/track5.mp3" }
 ];
 
 function loadTrack(index) {
