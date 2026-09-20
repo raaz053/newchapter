@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT'S FOR YOU | A Farewell Experience</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Reading Progress Indicator Bar -->
+    <div id="progress-bar"></div>
+
+    <!-- Ambient Dynamic Background FX -->
+    <div class="film-grain"></div>
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+    <canvas id="interactive-bg"></canvas>
+
+    <!-- HTML Audio Engine -->
+    <audio id="audio-player" preload="auto"></audio>
+
+    <!-- PASSWORD LOCK SCREEN -->
+    <div id="lock-screen">
+        <div class="lock-card">
+            <div class="lock-icon"><i class="fa-solid fa-lock"></i></div>
+            <h1 class="lock-title">IT'S FOR YOU</h1>
+            <p class="lock-subtitle">PRIVATE & CONFIDENTIAL // MADAM ONLY 🤫</p>
+            
+            <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 1.5rem;">
+                This little place isn't for everyone.<br>Only one person knows the passphrase.
+            </p>
+
+            <form id="lock-form" onsubmit="return false;">
+                <div class="input-group">
+                    <input type="password" id="passkey-input" class="lock-input" placeholder="Passphrase..." autocomplete="off">
+                </div>
+                <button type="button" id="unlock-btn" class="btn-gold">
+                    <span>UNLOCK</span> <i class="fa-solid fa-key"></i>
+                </button>
+            </form>
+
+            <p class="lock-hint">Hint: You already know who you are, Madam. 😉</p>
+            <div id="lock-error" class="lock-error">
+                Access Denied.<br>Seriously, Madam? 😂<br>You know the password.
+            </div>
+        </div>
+    </div>
+
+    <!-- TERMINAL LOADING SEQUENCE -->
+    <div id="terminal-screen">
+        <div class="terminal-card">
+            <div id="terminal-output"></div>
+            <button id="terminal-proceed-btn" class="btn-gold" style="display:none; margin-top: 1.75rem;">
+                LET'S GO →
+            </button>
+        </div>
+    </div>
+
+    <!-- HEADPHONES AUDIO PROMPT -->
+    <div id="headphones-screen">
+        <div class="headphones-card">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🎧✨</div>
+            <h2 style="font-family: var(--font-serif); color: var(--accent-gold); margin-bottom: 0.75rem;">Before you continue...</h2>
+            <p style="color: #cbd5e1; margin-bottom: 1.75rem;">Put your headphones on. Music makes memories feel real.</p>
+            <button id="start-music-btn" class="btn-gold">
+                ♪ PLAY OUR SONG
+            </button>
+        </div>
+    </div>
+
+    <!-- MAIN APP CONTAINER -->
+    <div class="app-container">
+
+        <!-- Navigation Header & Multi-Track Jukebox -->
+        <header class="nav-header">
+            <div class="brand-logo">
+                <span class="brand-dot"></span>
+                <span>IT'S FOR YOU 🎬</span>
+            </div>
+            
+            <!-- Multi-Track Jukebox Controls -->
+            <div class="jukebox-widget">
+                <button class="jb-btn" id="jb-prev" title="Previous Track"><i class="fa-solid fa-backward-step"></i></button>
+                <button class="jb-btn" id="jb-play" title="Play/Pause"><i class="fa-solid fa-play" id="jb-play-icon"></i></button>
+                <button class="jb-btn" id="jb-next" title="Next Track"><i class="fa-solid fa-forward-step"></i></button>
+                <span class="track-title" id="track-name">1. Nostalgia Vibes ☕</span>
+            </div>
+        </header>
+
+        <!-- CHAPTER 01: BEFORE YOU GO, MADAM... -->
+        <section class="chapter-section" id="ch1">
+            <div class="chapter-sticker">🍿</div>
+            <span class="chapter-tag"><i class="fa-solid fa-film"></i> Chapter 01</span>
+            <h2 class="chapter-title">BEFORE YOU GO, MADAM...</h2>
+            
+            <p class="narrative-p">So...</p>
+            <p class="narrative-p">You're actually going home. ✈️</p>
+            <p class="narrative-p">And instead of writing you a normal goodbye message, I decided to make this unnecessarily complicated.</p>
+            <p class="narrative-p">Because apparently... that's what I do. 😂</p>
+            
+            <div class="highlight-quote">
+                "Welcome to your private interactive movie, Madam. Sit back, tap around, and don't judge the website."
+            </div>
+
+            <p class="narrative-p">Let's begin. ✨</p>
+        </section>
+
+        <!-- CHAPTER 02: THE BEGINNING -->
+        <section class="chapter-section" id="ch2">
+            <div class="chapter-sticker">☕</div>
+            <span class="chapter-tag"><i class="fa-solid fa-hourglass-start"></i> Chapter 02</span>
+            <h2 class="chapter-title">THE BEGINNING</h2>
+
+            <p class="narrative-p">Every iconic story starts somewhere quiet before chaos takes over...</p>
+            <p class="narrative-p">When we first met, it was just a little talk. Standard greetings, polite smiles, and that initial hesitation where neither of us was quite ready to share what was really inside our minds. Just normal stuff.</p>
+
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-dot">💬</div>
+                    <div class="timeline-title">First Little Talk</div>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">
+                        That initial awkwardness where we kept things polite and wondered who the other person really was.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">🔓</div>
+                    <div class="timeline-title">Breaking The Hesitation</div>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">
+                        The exact point where guardrails came down and we realized we could share real thoughts without being judged.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">🌅</div>
+                    <div class="timeline-title">Talking From Night To Dawn</div>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">
+                        When conversations naturally stretched past midnight straight into dawn, losing track of hours completely.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">🛡️</div>
+                    <div class="timeline-title">Boundaries & Mutual Understanding</div>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">
+                        Understanding each other's situations, respecting boundaries, and building genuine trust.
+                    </p>
+                </div>
+            </div>
+
+            <div class="highlight-quote">
+                "If someone had told me that day how many memories would come after this... I probably wouldn't have believed them. And that was only the beginning."
+            </div>
+        </section>
+
+        <!-- CHAPTER 03: THINGS GOT OUT OF HAND -->
+        <section class="chapter-section" id="ch3">
+            <div class="chapter-sticker">📈</div>
+            <span class="chapter-tag"><i class="fa-solid fa-fire"></i> Chapter 03</span>
+            <h2 class="chapter-title">THINGS GOT OUT OF HAND</h2>
+
+            <p class="narrative-p">One casual conversation became another. Another became a habit.</p>
+            <p class="narrative-p">Soon we were talking from night until the morning dawn 🌅—learning new things, discovering new words, and exchanging random perspectives about life and living.</p>
+            <p class="narrative-p">Yet through it all, we always knew each other's situations and respected every boundary. It was just a clean, strong bond. ☕</p>
+
+            <div class="chat-container">
+                <div class="chat-bubble chat-left">
+                    <span class="chat-sender">Madam</span>
+                    Hey, look at the time... it's literally 4 AM dawn! 😂
+                </div>
+                <div class="chat-bubble chat-right">
+                    <span class="chat-sender">Nigga</span>
+                    Mams, we were only supposed to talk for 10 minutes. How did we reach life philosophies again? ☕
+                </div>
+                <div class="chat-bubble chat-left">
+                    <span class="chat-sender">Madam</span>
+                    Because you start overthinking and I have 50 funny stories to tell! 🍿
+                </div>
+            </div>
+
+            <p class="narrative-p">At some point we stopped making memories intentionally. We were just... living them. ✨</p>
+        </section>
+
+        <!-- CHAPTER 04: THE EVIDENCE ARCHIVE -->
+        <section class="chapter-section" id="ch4">
+            <div class="chapter-sticker">📁</div>
+            <span class="chapter-tag"><i class="fa-solid fa-folder-open"></i> Chapter 04</span>
+            <h2 class="chapter-title">THE EVIDENCE ARCHIVE</h2>
+            <p class="narrative-p">Here are archived case files from our chat history. Tap any card to view full memory details. 🕵️‍♀️</p>
+
+            <div class="case-files-toolbar">
+                <button class="case-filter-btn active" onclick="filterCases('all', event)">All Records</button>
+                <button class="case-filter-btn" onclick="filterCases('dawn', event)">Late Night & Dawn</button>
+                <button class="case-filter-btn" onclick="filterCases('funny', event)">Funny Moments</button>
+                <button class="case-filter-btn" onclick="filterCases('life', event)">Life & Advice</button>
+            </div>
+
+            <div class="case-files-grid" id="case-files-grid">
+                <!-- Dynamically Populated via script.js -->
+            </div>
+        </section>
+
+        <!-- CHAPTER 05: DO YOU REMEMBER? -->
+        <section class="chapter-section" id="ch5">
+            <div class="chapter-sticker">🧠</div>
+            <span class="chapter-tag"><i class="fa-solid fa-brain"></i> Chapter 05</span>
+            <h2 class="chapter-title">DO YOU REMEMBER?</h2>
+            <p class="narrative-p">Tap any card to flip and reveal a hidden core memory. 🃏</p>
+
+            <div class="flip-grid">
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-front">
+                            <i class="fa-solid fa-moon" style="font-size: 2rem; margin-bottom: 0.75rem;"></i>
+                            <p style="font-weight: 700;">Night Till Morning Dawn</p>
+                            <span style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">[Tap to Flip 👆]</span>
+                        </div>
+                        <div class="flip-back">
+                            <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem;">Dawn Conversations 🌅</h4>
+                            <p style="font-size: 0.82rem; color: #cbd5e1;">Losing track of time completely until birds started chirping outside.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-front">
+                            <i class="fa-solid fa-handshake" style="font-size: 2rem; margin-bottom: 0.75rem;"></i>
+                            <p style="font-weight: 700;">Sharing Real Situations</p>
+                            <span style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">[Tap to Flip 👆]</span>
+                        </div>
+                        <div class="flip-back">
+                            <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem;">Raw Life Talks 🤝</h4>
+                            <p style="font-size: 0.82rem; color: #cbd5e1;">Explaining what we were going through without pretending everything was perfect.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-front">
+                            <i class="fa-solid fa-bolt" style="font-size: 2rem; margin-bottom: 0.75rem;"></i>
+                            <p style="font-weight: 700;">Motivating Each Other</p>
+                            <span style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">[Tap to Flip 👆]</span>
+                        </div>
+                        <div class="flip-back">
+                            <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem;">The Pep Talks 💪</h4>
+                            <p style="font-size: 0.82rem; color: #cbd5e1;">Lifting each other up whenever stress or overthinking tried to take over.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-front">
+                            <i class="fa-solid fa-shield-halved" style="font-size: 2rem; margin-bottom: 0.75rem;"></i>
+                            <p style="font-weight: 700;">Boundaries & Respect</p>
+                            <span style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">[Tap to Flip 👆]</span>
+                        </div>
+                        <div class="flip-back">
+                            <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem;">Unspoken Rules 🛡️</h4>
+                            <p style="font-size: 0.82rem; color: #cbd5e1;">Knowing exactly where each other stood and respecting boundaries with ease.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-quote">
+                "The funny thing about memories is... you don't realize they're important while you're living them."
+            </div>
+        </section>
+
+        <!-- CHAPTER 06: THE LANGUAGE WE SPEAK -->
+        <section class="chapter-section" id="ch6">
+            <div class="chapter-sticker">💬</div>
+            <span class="chapter-tag"><i class="fa-solid fa-comments"></i> Chapter 06</span>
+            <h2 class="chapter-title">THE LANGUAGE WE SPEAK</h2>
+            <p class="narrative-p">
+                Our nicknames were never just words—they were our entire dialect. The start of every funny chat, late-night call, and random advice session. ☕
+            </p>
+
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <div>
+                        <div class="vocab-tag"><span>👑</span> "MADAM"</div>
+                        <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.65;">
+                            Reserved for when you were being dramatically serious, giving orders, or pretending you had everything 100% under control.
+                        </p>
+                    </div>
+                    <div style="margin-top: 1.25rem; font-size: 0.82rem; color: var(--accent-gold); font-style: italic;">
+                        "Listen here Madam..."
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div>
+                        <div class="vocab-tag"><span>🧠</span> "NIGGA"</div>
+                        <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.65;">
+                            The default response for overthinking, dropping unexpected life wisdom, or calling each other out on silly mistakes.
+                        </p>
+                    </div>
+                    <div style="margin-top: 1.25rem; font-size: 0.82rem; color: var(--accent-blue); font-style: italic;">
+                        "Nigga, are you overthinking again?"
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div>
+                        <div class="vocab-tag"><span>☕</span> "MAMS"</div>
+                        <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.65;">
+                            The casual go-to when asking for favors, checking in on bad days, or sharing random news out of nowhere.
+                        </p>
+                    </div>
+                    <div style="margin-top: 1.25rem; font-size: 0.82rem; color: var(--accent-pink); font-style: italic;">
+                        "Mams, guess what happened..."
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-quote">
+                "It was never about the words themselves—it was about having a friendship where we could talk about anything without filter."
+            </div>
+        </section>
+
+        <!-- CHAPTER 07: THE LITTLE THINGS -->
+        <section class="chapter-section" id="ch7">
+            <div class="chapter-sticker">🥑</div>
+            <span class="chapter-tag"><i class="fa-solid fa-sparkles"></i> Chapter 07</span>
+            <h2 class="chapter-title">THE LITTLE THINGS</h2>
+            <p class="narrative-p">Tap these floating memory fragments to reveal quick moments: ✨</p>
+
+            <div class="memory-cloud">
+                <div class="memory-chip" onclick="showToastMemory('☕ Morning Dawn Goodnights', 'When we talked so late that goodnight turned into good morning!')">☕ Dawn Goodnights</div>
+                <div class="memory-chip" onclick="showToastMemory('🍕 Random Food Debates', 'Arguing over what to eat before picking the same item as always.')">🍕 Food Debates</div>
+                <div class="memory-chip" onclick="showToastMemory('🚶 Everyday Walks', 'Walking around while talking about life, goals, and nonsense.')">🚶 Everyday Walks</div>
+                <div class="memory-chip" onclick="showToastMemory('🤫 Unspoken Understanding', 'Knowing what the other person meant without having to say 10 sentences.')">🤫 Unspoken Vibe</div>
+                <div class="memory-chip" onclick="showToastMemory('📱 3 AM Memes', 'Dropping chaotic memes at 3 AM with zero context.')">📱 3 AM Memes</div>
+                <div class="memory-chip" onclick="showToastMemory('💡 Moral Support', 'Reminding each other that we got this whenever stress hit.')">💡 Moral Boosts</div>
+                <div class="memory-chip" onclick="showToastMemory('🛡️ Respecting Limits', 'Knowing when to give space and always respecting boundaries.')">🛡️ Respecting Limits</div>
+                <div class="memory-chip" onclick="showToastMemory('📚 New Perspectives', 'Teaching each other new words and new ways to view life.')">📚 Learning Things</div>
+                <div class="memory-chip" onclick="showToastMemory('😂 Laughing Fits', 'Laughing so hard we couldn\'t even text properly.')">😂 Laughing Fits</div>
+                <div class="memory-chip" onclick="showToastMemory('🎧 Song Shares', 'Sending track recommendations that matched the exact mood.')">🎧 Song Shares</div>
+                <div class="memory-chip" onclick="showToastMemory('☕ Coffee Fixes', 'Quick drink runs that instantly fixed awful moods.')">☕ Coffee Runs</div>
+                <div class="memory-chip" onclick="showToastMemory('🌟 Pure Honesty', 'Being able to say what was on our mind without hesitation.')">🌟 Pure Honesty</div>
+            </div>
+
+            <p class="narrative-p" style="margin-top: 2rem;">You probably don't realize it... but you left little pieces of yourself in my everyday life.</p>
+        </section>
+
+        <!-- CHAPTER 08: THINGS I LEARNED -->
+        <section class="chapter-section" id="ch8">
+            <div class="chapter-sticker">💡</div>
+            <span class="chapter-tag"><i class="fa-solid fa-lightbulb"></i> Chapter 08</span>
+            <h2 class="chapter-title">THINGS I LEARNED</h2>
+
+            <div class="lessons-grid">
+                <div class="lesson-card">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🌟</div>
+                    "I learned that ordinary days can become extraordinary memories."
+                </div>
+                <div class="lesson-card">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🤝</div>
+                    "People don't need years to become genuinely important."
+                </div>
+                <div class="lesson-card">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">💬</div>
+                    "Sometimes pointless conversations become the ones you remember forever."
+                </div>
+                <div class="lesson-card">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">✨</div>
+                    "Respecting boundaries while staying close creates the strongest friendships."
+                </div>
+            </div>
+
+            <p class="narrative-p" style="margin-top: 2rem;">You probably never intended to teach me any of these things. But you did.</p>
+        </section>
+
+        <!-- CHAPTER 09: THE LAST DAYS -->
+        <section class="chapter-section" id="ch9">
+            <div class="chapter-sticker">⏳</div>
+            <span class="chapter-tag"><i class="fa-solid fa-clock"></i> Chapter 09</span>
+            <h2 class="chapter-title">THE LAST DAYS</h2>
+
+            <p class="narrative-p">And then... time started moving faster. ⏳</p>
+            <p class="narrative-p">Suddenly there were dates. Plans. "When are you going?" "How long is left?"</p>
+            <p class="narrative-p">And eventually... there was a last day.</p>
+
+            <div class="highlight-quote">
+                "I don't think either of us really wanted to call it an ending."
+            </div>
+        </section>
+
+        <!-- CHAPTER 10: ENDINGS -->
+        <section class="chapter-section" id="ch10">
+            <div class="chapter-sticker">🍂</div>
+            <span class="chapter-tag"><i class="fa-solid fa-book-bookmark"></i> Chapter 10</span>
+            <h2 class="chapter-title">ENDINGS</h2>
+
+            <p class="narrative-p">Every chapter has to end.</p>
+            <p class="narrative-p">Not because the story wasn't good. Not because the memories disappear. Not because people suddenly stop mattering.</p>
+            <p class="narrative-p">Sometimes a chapter ends simply because it's time to turn the page. 📖</p>
+
+            <p class="narrative-p" style="margin-top: 1.5rem; color: var(--accent-gold);">
+                You're going home. I'm still here. Our routines will change. Our conversations might change. Life will move forward. And honestly... that's okay.
+            </p>
+        </section>
+
+        <!-- CHAPTER 11: THE NEXT CHAPTER -->
+        <section class="chapter-section" id="ch11" style="border-color: rgba(245, 197, 66, 0.5);">
+            <div class="chapter-sticker">🌅</div>
+            <span class="chapter-tag" style="color: #4ade80; background: rgba(74, 222, 128, 0.1); border-color: rgba(74, 222, 128, 0.3);">
+                <i class="fa-solid fa-compass"></i> Chapter 11
+            </span>
+            <h2 class="chapter-title" style="color: #fef08a;">THE NEXT CHAPTER</h2>
+
+            <p class="narrative-p">You have places to go. Things to do. People to meet. Dreams to chase. 🚀</p>
+            <p class="narrative-p">And I have my own road ahead.</p>
+
+            <div class="highlight-quote">
+                "Maybe our paths cross again. Maybe they don't. We don't know. And we don't need to know. We already had something worth remembering."
+            </div>
+        </section>
+
+        <!-- CHAPTER 12: ONE LAST THING, MADAM -->
+        <section class="chapter-section" id="ch12">
+            <div class="chapter-sticker">💌</div>
+            <span class="chapter-tag"><i class="fa-solid fa-envelope-open-text"></i> Chapter 12</span>
+            <h2 class="chapter-title">ONE LAST THING, MADAM</h2>
+
+            <p class="narrative-p" style="text-align: center;">Madam, you have one final message waiting for you.</p>
+
+            <div class="envelope-container">
+                <div class="envelope-wrapper" onclick="openLetterModal()">
+                    <div class="wax-seal"><i class="fa-solid fa-heart"></i></div>
+                </div>
+                <button class="btn-envelope" onclick="openLetterModal()">
+                    <span>OPEN LETTER</span> <i class="fa-solid fa-envelope-open"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- FINAL CHAPTER: OUR STORY CONTINUES -->
+        <section class="chapter-section" id="ch-final" style="text-align: center;">
+            <span class="chapter-tag"><i class="fa-solid fa-heart"></i> The Final Chapter</span>
+            
+            <h2 class="chapter-title" style="margin-top: 0.5rem;">OUR STORY IN MEMORIES</h2>
+
+            <p class="narrative-p" style="max-width: 680px; margin: 0 auto 1.5rem;">
+                A chapter comes to an end not because it failed, but because it was completed. What we built, every laugh, and every conversation stays right here with us.
+            </p>
+
+            <div class="page-turn-box">
+                <p style="font-size: 0.8rem; letter-spacing: 0.2em; color: var(--text-muted); text-transform: uppercase;">
+                    CHAPTER CLOSED • MEMORIES KEPT
+                </p>
+                <h1 class="finale-title">THANK YOU, SUBBA ✨</h1>
+                
+                <p class="narrative-p" style="font-size: 1.15rem; max-width: 620px; margin: 1.5rem auto 0;">
+                    Wherever your next step leads back home, I hope it brings you peace, happiness, and everything you've been working for.
+                </p>
+
+                <p class="narrative-p" style="font-size: 1.25rem; font-weight: 700; color: var(--accent-gold); margin-top: 1.25rem;">
+                    Take care of yourself, Madam.
+                </p>
+                <p class="narrative-p" style="font-size: 1.15rem; color: var(--accent-pink);">
+                    And don't forget your Nigga. 😂❤️
+                </p>
+            </div>
+
+            <div class="last-memory-container">
+                <p style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--accent-gold); margin-bottom: 0.5rem;">
+                    ONE LAST MEMORY FOR THE ROAD 📸
+                </p>
+                <p style="color: #cbd5e1; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    Before you lock this vault away, here is one final picture that sums up our friendship.
+                </p>
+                <button class="btn-gold" onclick="openLastMemoryModal()" style="max-width: 280px; margin: 0 auto;">
+                    <span>VIEW FINAL MEMORY →</span>
+                </button>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- MODAL 1: LIGHTBOX -->
+    <div id="modal-lightbox" class="modal-overlay">
+        <div class="modal-body">
+            <button class="close-btn" onclick="closeModal('modal-lightbox')">&times;</button>
+            <h3 id="modal-title" style="font-family: var(--font-serif); color: var(--accent-gold); font-size: 1.5rem; margin-bottom: 0.5rem;"></h3>
+            <p id="modal-meta" style="font-family: monospace; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;"></p>
+            
+            <div id="modal-img-container" style="width: 100%; min-height: 220px; background: #1e293b; border-radius: 1rem; display: flex; align-items: center; justify-content: center; color: var(--text-muted); border: 1px dashed var(--accent-gold); margin-bottom: 1.25rem; overflow: hidden;">
+                <i class="fa-solid fa-image" style="font-size: 3rem; color: var(--accent-gold);"></i>
+            </div>
+            
+            <p id="modal-desc" style="font-size: 1rem; color: #e2e8f0; line-height: 1.6;"></p>
+        </div>
+    </div>
+
+    <!-- MODAL 2: PERSONAL LETTER -->
+    <div id="modal-letter" class="modal-overlay">
+        <div class="modal-body letter-modal-card">
+            <button class="close-btn" onclick="closeModal('modal-letter')">&times;</button>
+            <h2 class="letter-heading">Dear Subba (Madam), 💌</h2>
+            
+            <div class="letter-content">
+                Hey Subba,
+
+                If you are reading this, it means you navigated through all my code, chat memories, and inside jokes.
+
+                I just wanted to say thank you. Thank you for every late-night conversation till dawn, every funny moment, the random overthinking, and for being such a genuinely great friend who respected boundaries while staying close.
+
+                Going back home is a big new chapter, but I know you are going to do amazing things. Don't stress too much, don't let people annoy you, and keep being the chaotic Madam you are.
+
+                Our chapter here might be closed, but the memories stay forever.
+
+                Take care of yourself!
+
+                — Your Nigga 😂❤️
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3: ONE LAST MEMORY -->
+    <div id="modal-last-memory" class="modal-overlay">
+        <div class="modal-body" style="text-align: center;">
+            <button class="close-btn" onclick="closeModal('modal-last-memory')">&times;</button>
+            <span style="font-size: 2.5rem;">🎁✨</span>
+            <h2 style="font-family: var(--font-serif); color: var(--accent-gold); margin: 0.5rem 0 1rem;">THE FINAL SHOT</h2>
+            
+            <div style="width: 100%; height: 260px; background: #1e293b; border-radius: 1.25rem; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-muted); border: 2px solid var(--accent-gold); margin-bottom: 1.25rem; overflow: hidden;">
+                <img src="assets/images/final-memory.png" alt="Final Memory" style="width:100%; height:100%; object-fit:cover;" onerror="this.parentElement.innerHTML='<i class=\'fa-solid fa-heart\' style=\'font-size: 3.5rem; color: #f43f5e; margin-bottom: 0.5rem;\'></i><span>[assets/images/final-memory.jpg]</span>'">
+            </div>
+
+            <p style="font-size: 1.1rem; color: #f1f5f9; font-weight: 600; margin-bottom: 0.5rem;">This one. No explanation needed.</p>
+            <p style="font-size: 0.9rem; color: var(--text-muted); font-style: italic;">Goodnight, Madam. 🌙</p>
+        </div>
+    </div>
+
+    <!-- MODAL 4: MEMORY CHIP TOAST -->
+    <div id="memory-toast-modal" class="modal-overlay">
+        <div class="modal-body toast-card">
+            <button class="close-btn" onclick="closeModal('memory-toast-modal')">&times;</button>
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;" id="toast-icon">✨</div>
+            <h3 id="toast-title" style="color: var(--accent-gold); font-family: var(--font-serif); margin-bottom: 0.5rem;"></h3>
+            <p id="toast-text" style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6;"></p>
+        </div>
+    </div>
+
+    <!-- External JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
